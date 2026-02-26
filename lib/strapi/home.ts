@@ -1,13 +1,21 @@
-import qs from 'qs';
-import { getStrapiData } from './client';
+import qs from 'qs'
+import { getStrapiData } from './client'
+import { DEGREES_FRAGMENT } from './fragments'
+import { HomePageType } from '@/components/home'
 
 const QUERY_HOME_PAGE = qs.stringify({
-    populate: {
-    }
-});
+  fields: ['title', 'description'],
+  populate: {
+    sections: {
+      on: {
+        ...DEGREES_FRAGMENT,
+      },
+    },
+  },
+})
 
-export async function getHomePage() {
-    const query = QUERY_HOME_PAGE;
-    const response = await getStrapiData(`/api/home-page?${query}`);
-    return response?.data;
+export async function getHomePage(): Promise<HomePageType> {
+  const query = QUERY_HOME_PAGE
+  const response = await getStrapiData(`/api/home-page?${query}`)
+  return response?.data
 }
