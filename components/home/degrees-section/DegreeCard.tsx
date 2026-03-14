@@ -43,7 +43,7 @@ export const DegreeCard = ({ degrees }: Props) => {
             viewport={{ once: true, amount: 0.3 }}
             className="group relative z-10 h-125 w-full py-8 will-change-transform hover:z-20 lg:hover:shadow-2xl"
           >
-            <Link href={`/${slug}`}>
+            <Link href={`oferta-academica/licenciaturas/${slug}`}>
               <div className="absolute inset-0 transition-transform duration-500 lg:group-hover:-translate-y-7 lg:group-hover:scale-110">
                 <Image
                   src={image}
