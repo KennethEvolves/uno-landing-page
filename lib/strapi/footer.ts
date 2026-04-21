@@ -1,5 +1,5 @@
 import qs from 'qs'
-import { getStrapiData } from './client'
+import { getStrapiData } from '../shared'
 
 const QUERY_FOOTER = qs.stringify({
   populate: {

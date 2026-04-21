@@ -1,1 +1,7 @@
 export * from './seo.types'
+export * from './data.service'
+export * from './dto.types'
+export * from './endpoint'
+export * from './model.types'
+export * from './query'
+export * from './strapi'

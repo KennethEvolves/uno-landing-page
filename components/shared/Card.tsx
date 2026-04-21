@@ -1,12 +1,12 @@
 'use client'
 import Link from 'next/link'
-import { DegreeType } from '../Home.types'
 import Image from 'next/image'
 import { ArrowUpRightIcon } from '@primer/octicons-react'
 import { motion, Variants } from 'motion/react'
+import { CardModel } from '@/lib/shared'
 
 interface Props {
-  degrees: DegreeType[]
+  data: CardModel[]
 }
 
 const item: Variants = {
@@ -24,19 +24,16 @@ const item: Variants = {
   },
 }
 
-export const DegreeCard = ({ degrees }: Props) => {
-  const STRAPI_URL = process.env.NEXT_PUBLIC_STRAPI_URL
-
+export const Card = ({ data }: Props) => {
   return (
     <article className="grid w-full grid-cols-1 gap-x-6 gap-y-16 px-6 lg:grid-cols-2 xl:grid-cols-3 2xl:px-36">
-      {degrees.map((degree) => {
-        const { url, alternativeText } = degree.cover || {}
-        const { name, description, slug, ctaLabel } = degree
-        const image = url ? `${STRAPI_URL}${url}` : '/placeholder.png'
+      {data.map((programCard) => {
+        const { title, description, slug, ctaLabel, images } = programCard
+        const { src, alt } = images.cover
 
         return (
           <motion.div
-            key={degree.id}
+            key={slug}
             variants={item}
             initial="hidden"
             whileInView="visible"
@@ -46,8 +43,8 @@ export const DegreeCard = ({ degrees }: Props) => {
             <Link href={`oferta-academica/licenciaturas/${slug}`}>
               <div className="absolute inset-0 transition-transform duration-500 lg:group-hover:-translate-y-7 lg:group-hover:scale-110">
                 <Image
-                  src={image}
-                  alt={`${alternativeText}`}
+                  src={src}
+                  alt={alt}
                   fill
                   className="object-contain"
                   unoptimized
@@ -58,7 +55,7 @@ export const DegreeCard = ({ degrees }: Props) => {
 
               <div className="absolute bottom-0 z-30 flex w-full flex-col gap-4 p-8 text-white">
                 <h1 className="text-2xl leading-tight font-bold uppercase transition-transform duration-500 sm:text-3xl">
-                  {name}
+                  {title}
                 </h1>
 
                 <div className="max-h-30 overflow-hidden opacity-100 transition-all duration-500 ease-in-out group-hover:max-h-40 group-hover:opacity-100 lg:max-h-0 lg:opacity-0">

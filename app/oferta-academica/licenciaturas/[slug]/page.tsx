@@ -1,30 +1,39 @@
-import { getDegree, getDegreeSeo } from '@/lib'
+import type { Metadata } from 'next'
+import { type Props, endpoints, QUERY_SEO, getSeo } from '@/lib/shared'
+import { getProgram } from '@/lib/programs'
+import { Hero } from '@/components'
 
-type PageParams = Promise<{ slug: string }>
-
-interface Props {
-  params: PageParams
-}
-
-export async function generateMetadata({ params }: Props) {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
-  const degree = await getDegreeSeo(slug)
-  const { seo } = degree
+
+  const args = {
+    slug,
+    endpoint: endpoints.programs,
+    query: QUERY_SEO,
+  }
+  const { title, description } = await getSeo(args)
+
   return {
-    title: seo.title as string,
-    description: seo.description as string,
+    title,
+    description,
   }
 }
 
-export const DegreePage = async ({ params }: Props) => {
+const ProgramPage = async ({ params }: Props) => {
   const { slug } = await params
-  const degree = await getDegree(slug)
-  const { name } = degree
+  const program = await getProgram(slug)
+  const { name, description, key, images } = program
+  const { hero } = images
   return (
     <main className="mt-18">
-      <h1>{name}</h1>
+      <Hero
+        name={name}
+        description={description}
+        programKey={key}
+        imageHero={hero}
+      />
     </main>
   )
 }
 
-export default DegreePage
+export default ProgramPage
