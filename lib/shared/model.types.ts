@@ -25,3 +25,9 @@ export interface CardModel {
     cover: ImageModel
   }
 }
+
+export interface LabelValueModel {
+  label: string
+  value?: number | string
+  iconName?: string
+}

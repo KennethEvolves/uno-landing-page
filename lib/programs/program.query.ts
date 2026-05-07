@@ -6,18 +6,36 @@ export const QUERY_PROGRAM = {
     'slug',
     'level',
     'description',
-    'modality',
-    'academicTerm',
-    'duration',
     'key',
     'ctaLabel',
   ],
   populate: {
+    objective: {
+      fields: ['label', 'valueString', 'iconName'],
+    },
     imageCover: {
       fields: ['id', 'url', 'alternativeText', 'width', 'height'],
     },
     imageHero: {
       fields: ['id', 'url', 'alternativeText', 'width', 'height'],
     },
+    details: {
+      populate: {
+        modality: {
+          fields: ['label', 'valueString', 'iconName'],
+        },
+        duration: {
+          fields: ['label', 'valueString', 'iconName'],
+        },
+        cycle: {
+          fields: ['label', 'valueString', 'iconName'],
+        },
+        location: {
+          fields: ['label', 'valueString', 'iconName'],
+        },
+      },
+    },
+    graduateProfile: { populate: '*' },
+    workField: { populate: '*' },
   },
 }

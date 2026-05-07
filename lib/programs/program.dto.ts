@@ -1,4 +1,4 @@
-import { ImageDto } from '../shared'
+import type { ImageDto, LabelValueDto, TextItemDto } from '../shared'
 
 export interface ProgramDto {
   id: number
@@ -7,11 +7,36 @@ export interface ProgramDto {
   slug: string
   level: string
   description: string
-  modality: string
-  academicTerm: string
-  duration: string
   key: string
   ctaLabel: string
+  objective: LabelValueDto
   imageCover: ImageDto
   imageHero: ImageDto
+  details: DetailsDto
+  graduateProfile: GraduateProfileDto
+  workField: WorkFieldDto
+}
+
+export interface DetailsDto {
+  id: number
+  modality: LabelValueDto
+  duration: LabelValueDto
+  cycle: LabelValueDto
+  location: LabelValueDto
+}
+
+export interface GraduateProfileDto {
+  id: number
+  title: string
+  summary: string
+  knowledge: TextItemDto[]
+  skills: TextItemDto[]
+  attitudes: TextItemDto[]
+}
+
+export interface WorkFieldDto {
+  id: number
+  title: string
+  summary: string
+  employmentAreas: TextItemDto[]
 }

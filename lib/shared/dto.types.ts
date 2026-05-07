@@ -18,3 +18,15 @@ export interface ImageDto {
   width: number
   height: number
 }
+
+export interface LabelValueDto {
+  id: number
+  label: string
+  valueString: string
+  iconName: string
+}
+
+export interface TextItemDto {
+  id: number
+  item: string
+}
