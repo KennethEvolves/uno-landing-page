@@ -22,13 +22,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 const ProgramPage = async ({ params }: Props) => {
   const { slug } = await params
   const program = await getProgram(slug)
-  const { name, description, key, images } = program
+  const { name, description, level, key, images, details } = program
   const { hero } = images
   return (
     <main className="mt-18">
       <Hero
         name={name}
         description={description}
+        level={level}
+        details={details}
         programKey={key}
         imageHero={hero}
       />
