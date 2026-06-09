@@ -19,6 +19,9 @@ export const QUERY_PROGRAM = {
     imageHero: {
       fields: ['id', 'url', 'alternativeText', 'width', 'height'],
     },
+    imageDuo: {
+      fields: ['id', 'url', 'alternativeText', 'width', 'height'],
+    },
     details: {
       populate: {
         modality: {

@@ -9,6 +9,7 @@ export interface ProgramModel {
   ctaLabel: string
   objective: LabelValueModel
   images: {
+    duo: ImageModel
     cover: ImageModel
     hero: ImageModel
   }

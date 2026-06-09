@@ -6,6 +6,7 @@ import {
   MortarBoardIcon,
   SyncIcon,
   MilestoneIcon,
+  BookmarkFillIcon,
 } from '@primer/octicons-react'
 
 const ICON_MAP = {
@@ -15,6 +16,7 @@ const ICON_MAP = {
   location: LocationIcon,
   check: CheckCircleIcon,
   milestone: MilestoneIcon,
+  bookmark: BookmarkFillIcon,
 }
 
 interface Props {

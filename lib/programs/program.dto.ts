@@ -12,6 +12,7 @@ export interface ProgramDto {
   objective: LabelValueDto
   imageCover: ImageDto
   imageHero: ImageDto
+  imageDuo: ImageDto
   details: DetailsDto
   graduateProfile: GraduateProfileDto
   workField: WorkFieldDto
