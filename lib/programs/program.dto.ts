@@ -13,6 +13,7 @@ export interface ProgramDto {
   imageCover: ImageDto
   imageHero: ImageDto
   imageDuo: ImageDto
+  imageGroup: ImageDto
   details: DetailsDto
   graduateProfile: GraduateProfileDto
   workField: WorkFieldDto

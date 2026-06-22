@@ -22,6 +22,9 @@ export const QUERY_PROGRAM = {
     imageDuo: {
       fields: ['id', 'url', 'alternativeText', 'width', 'height'],
     },
+    imageGroup: {
+      fields: ['id', 'url', 'alternativeText', 'width', 'height'],
+    },
     details: {
       populate: {
         modality: {

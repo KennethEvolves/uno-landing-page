@@ -11,6 +11,7 @@ export const programAdapter = (dto: ProgramDto): ProgramModel => {
     key,
     ctaLabel,
     objective,
+    imageGroup,
     imageDuo,
     imageCover,
     imageHero,
@@ -55,6 +56,12 @@ export const programAdapter = (dto: ProgramDto): ProgramModel => {
         alt,
         width: w,
         height: h,
+      },
+      group: {
+        src: `${BASE_URL}${imageGroup.url}`,
+        alt: imageGroup.alternativeText,
+        width: imageGroup.width,
+        height: imageGroup.height,
       },
     },
     details: {
