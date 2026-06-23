@@ -15,6 +15,7 @@ export const programAdapter = (dto: ProgramDto): ProgramModel => {
     imageDuo,
     imageCover,
     imageHero,
+    imageWorkField,
     details,
     graduateProfile,
     workField,
@@ -62,6 +63,12 @@ export const programAdapter = (dto: ProgramDto): ProgramModel => {
         alt: imageGroup.alternativeText,
         width: imageGroup.width,
         height: imageGroup.height,
+      },
+      work: {
+        src: `${BASE_URL}${imageWorkField.url}`,
+        alt: imageWorkField.alternativeText,
+        width: imageWorkField.width,
+        height: imageWorkField.height,
       },
     },
     details: {

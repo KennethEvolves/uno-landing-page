@@ -25,6 +25,9 @@ export const QUERY_PROGRAM = {
     imageGroup: {
       fields: ['id', 'url', 'alternativeText', 'width', 'height'],
     },
+    imageWorkField: {
+      fields: ['id', 'url', 'alternativeText', 'width', 'height'],
+    },
     details: {
       populate: {
         modality: {

@@ -13,6 +13,7 @@ export interface ProgramModel {
     cover: ImageModel
     hero: ImageModel
     group: ImageModel
+    work: ImageModel
   }
   details: DetailsModel
   graduateProfile: GraduateProfileModel

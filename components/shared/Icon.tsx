@@ -12,6 +12,8 @@ import {
   HeartIcon,
   ChevronDownIcon,
   CheckIcon,
+  DotFillIcon,
+  BriefcaseIcon,
 } from '@primer/octicons-react'
 
 const ICON_MAP = {
@@ -27,6 +29,8 @@ const ICON_MAP = {
   heart: HeartIcon,
   chevronDown: ChevronDownIcon,
   checkicon: CheckIcon,
+  doticon: DotFillIcon,
+  briefcase: BriefcaseIcon,
 }
 
 interface Props {

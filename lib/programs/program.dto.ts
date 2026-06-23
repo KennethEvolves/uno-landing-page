@@ -14,6 +14,7 @@ export interface ProgramDto {
   imageHero: ImageDto
   imageDuo: ImageDto
   imageGroup: ImageDto
+  imageWorkField: ImageDto
   details: DetailsDto
   graduateProfile: GraduateProfileDto
   workField: WorkFieldDto

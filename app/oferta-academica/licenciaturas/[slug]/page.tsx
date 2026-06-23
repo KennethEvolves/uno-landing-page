@@ -1,7 +1,12 @@
 import type { Metadata } from 'next'
 import { type Props, endpoints, QUERY_SEO, getSeo } from '@/lib/shared'
 import { getProgram } from '@/lib/programs'
-import { Hero, ProgramObjective, GraduateProfile } from '@/components'
+import {
+  Hero,
+  ProgramObjective,
+  GraduateProfile,
+  WorkField,
+} from '@/components'
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
@@ -23,7 +28,7 @@ const ProgramPage = async ({ params }: Props) => {
   const { slug } = await params
   const program = await getProgram(slug)
   const { name, description, level, key, objective, images, details } = program
-  const { hero, duo, group } = images
+  const { hero, duo, group, work } = images
   return (
     <main className="mt-18">
       <Hero
@@ -36,6 +41,7 @@ const ProgramPage = async ({ params }: Props) => {
       />
       <ProgramObjective objective={objective} cover={group} />
       <GraduateProfile profile={program.graduateProfile} image={duo} />
+      <WorkField work={program.workField} image={work} />
     </main>
   )
 }
