@@ -59,7 +59,7 @@ export const ProgramObjective = ({ objective, cover }: Props) => {
         >
           <motion.div
             variants={item}
-            className="flex w-full flex-col items-center justify-center gap-5 lg:items-center 2xl:flex-row"
+            className="flex w-full flex-col items-center justify-center gap-5 lg:items-center"
           >
             <Icon iconName={iconName} size={24} className="opacity-50" />
             <h2 className="text-lg leading-[1.1] font-extrabold tracking-tighter text-balance uppercase sm:text-xl xl:text-2xl 2xl:text-3xl">

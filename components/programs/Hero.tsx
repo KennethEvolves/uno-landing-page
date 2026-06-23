@@ -62,7 +62,7 @@ export const Hero = (data: Props) => {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
-        className="grid w-full grid-cols-1 overflow-hidden bg-white lg:grid-cols-[45%_55%]"
+        className="grid w-full grid-cols-1 overflow-hidden bg-white lg:grid-cols-[50%_50%]"
       >
         <motion.article
           variants={container}
