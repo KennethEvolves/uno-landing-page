@@ -30,3 +30,9 @@ export interface TextItemDto {
   id: number
   item: string
 }
+
+export interface HeaderDto {
+  id: number
+  title: string
+  backgroundImage: ImageDto
+}

@@ -21,3 +21,12 @@ export const QUERY_SEO = {
     },
   },
 }
+
+export const QUERY_PAGE_HEADER = {
+  fields: ['title'],
+  populate: {
+    backgroundImage: {
+      fields: ['id', 'url', 'alternativeText', 'width', 'height'],
+    },
+  },
+}

@@ -31,3 +31,8 @@ export interface LabelValueModel {
   value?: number | string
   iconName?: string
 }
+
+export interface PageHeaderModel {
+  title: string
+  image: ImageModel
+}

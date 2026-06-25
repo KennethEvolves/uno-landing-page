@@ -10,3 +10,4 @@ export * from './programs/WorkField'
 
 export * from './shared/Card'
 export * from './shared/Icon'
+export * from './shared/PageHeader'
