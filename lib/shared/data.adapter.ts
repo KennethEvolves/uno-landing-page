@@ -1,4 +1,4 @@
-import { HeaderDto, SeoResponseDto } from './dto.types'
+import { HeaderDto, SeoResponseDto, TextItemDto } from './dto.types'
 import { PageHeaderModel, SeoModel } from './model.types'
 
 export const seoAdapter = (dto: SeoResponseDto): SeoModel => {
@@ -26,4 +26,9 @@ export const pageHeaderAdapter = (dto: HeaderDto): PageHeaderModel => {
       height: height,
     },
   }
+}
+
+export const itemAdapter = (dto: TextItemDto): string => {
+  const { item } = dto
+  return item
 }

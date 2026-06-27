@@ -36,3 +36,19 @@ export interface HeaderDto {
   title: string
   backgroundImage: ImageDto
 }
+
+export interface DepartmentDto {
+  id: number
+  documentId: string
+  name: string
+  order: number
+  staff_members: StaffMemberDto[]
+}
+
+export interface StaffMemberDto {
+  id: number
+  documentId: string
+  fullName: string
+  role: string
+  email: string
+}

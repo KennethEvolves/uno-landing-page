@@ -22,6 +22,10 @@ export const QUERY_SEO = {
   },
 }
 
+export const QUERY_IMAGE = {
+  fields: ['url', 'alternativeText', 'width', 'height'],
+}
+
 export const QUERY_PAGE_HEADER = {
   fields: ['title'],
   populate: {

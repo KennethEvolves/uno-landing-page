@@ -36,3 +36,15 @@ export interface PageHeaderModel {
   title: string
   image: ImageModel
 }
+
+export interface DepartmentModel {
+  order: number
+  name: string
+  staffMembers: StaffMemberModel[]
+}
+
+export interface StaffMemberModel {
+  fullName: string
+  role: string
+  email: string
+}

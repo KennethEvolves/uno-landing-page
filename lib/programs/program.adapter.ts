@@ -1,6 +1,6 @@
-import { TextItemDto } from '../shared'
 import type { ProgramDto } from './program.dto'
 import type { ProgramModel } from './program.model'
+import { itemAdapter } from '../shared'
 
 export const programAdapter = (dto: ProgramDto): ProgramModel => {
   const {
@@ -106,9 +106,4 @@ export const programAdapter = (dto: ProgramDto): ProgramModel => {
       employmentAreas: workField.employmentAreas.map(itemAdapter),
     },
   }
-}
-
-const itemAdapter = (dto: TextItemDto): string => {
-  const { item } = dto
-  return item
 }
